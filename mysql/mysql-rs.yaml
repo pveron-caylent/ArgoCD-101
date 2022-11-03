@@ -20,7 +20,7 @@ spec:
         resources:
           requests:
             cpu: 1
-            memory: 2Gi
+            memory: 1Gi
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: dont-use-me
@@ -29,10 +29,3 @@ spec:
             port: 3306
         ports:
         - containerPort: 3306
-        volumeMounts:
-          - name: database
-            mountPath: "/var/lib/mysql"
-      volumes:
-      - name: database
-        persistentVolumeClaim:
-          claimName: database
